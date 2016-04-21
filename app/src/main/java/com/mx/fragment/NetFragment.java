@@ -14,10 +14,13 @@ import com.mx.R;
 import com.mx.protocol.TestProtocol;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
+import java.util.TreeMap;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,8 +89,64 @@ public class NetFragment extends RxFragment implements View.OnClickListener {
                                 mTvResult.setText("Get Error:\r\n" + throwable.getMessage());
                             }
                         });
+                break;
 
+            case R.id.btn_post:
+                TreeMap<String,Object>params=new TreeMap<>();
+                params.put("name","Zeus");
+                mTestProtocol.test_post(params)
+                        .compose(this.<String>bindToLifecycle())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(new Action1<String>() {
+                            @Override
+                            public void call(String s) {
+                                mTvResult.setText("Get Result:\r\n" + s);
 
+                            }
+                        }, new Action1<Throwable>() {
+                            @Override
+                            public void call(Throwable throwable) {
+                                mTvResult.setText("Get Error:\r\n" + throwable);
+                            }
+                        });
+                break;
+
+            case R.id.btn_put:
+                TreeMap<String,Object>params_put=new TreeMap<>();
+                params_put.put("name","Zeus");
+                mTestProtocol.text_Put(params_put)
+                        .compose(this.<String>bindToLifecycle())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(new Action1<String>() {
+                            @Override
+                            public void call(String s) {
+                                mTvResult.setText("Get Result:\r\n" + s);
+                            }
+                        }, new Action1<Throwable>() {
+                            @Override
+                            public void call(Throwable throwable) {
+                                mTvResult.setText("Get Error:\r\n" + throwable);
+                            }
+                        });
+                break;
+            case R.id.btn_delete:
+                mTestProtocol.test_delete()
+                        .compose(this.<String>bindToLifecycle())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(new Action1<String>() {
+                            @Override
+                            public void call(String s) {
+                                mTvResult.setText("Get Result:\r\n" + s);
+                            }
+                        }, new Action1<Throwable>() {
+                            @Override
+                            public void call(Throwable throwable) {
+                                mTvResult.setText("Get Error:\r\n" + throwable);
+                            }
+                        });
                 break;
         }
     }
