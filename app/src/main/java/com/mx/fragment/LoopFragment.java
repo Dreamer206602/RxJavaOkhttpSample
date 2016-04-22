@@ -10,14 +10,11 @@ import android.view.ViewGroup;
 import com.mx.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Loop轮询器Demo
  */
 public class LoopFragment extends Fragment {
 
 
-    public LoopFragment() {
-        // Required empty public constructor
-    }
 
 
     @Override

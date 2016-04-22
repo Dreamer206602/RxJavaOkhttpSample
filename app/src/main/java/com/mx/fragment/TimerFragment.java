@@ -53,9 +53,14 @@ public class TimerFragment extends RxFragment {
                     @Override
                     public void call(Long aLong) {
                         mIvWelcome.setVisibility(View.VISIBLE);
-                        ObjectAnimator.ofFloat(mIvWelcome,"alpha",0.0F,1.0F)
+                        ObjectAnimator.ofFloat(mIvWelcome, "alpha", 0.0F, 1.0F)
                                 .setDuration(500)
                                 .start();
+
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
 
                     }
                 });
