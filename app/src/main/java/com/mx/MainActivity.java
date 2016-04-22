@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFragment() {
-
-
         getSupportFragmentManager().beginTransaction().replace(R.id.main_parent,
                 new MainFragment(), MainFragment.class.getName()).commit();
     }

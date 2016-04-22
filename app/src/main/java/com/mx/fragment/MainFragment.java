@@ -67,20 +67,49 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         ButterKnife.unbind(this);
     }
 
-    private void open(Fragment fragment){
-        final String tag=fragment.getClass().toString();
+    private void open(Fragment fragment) {
+        final String tag = fragment.getClass().toString();
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack(tag)
-                .replace(R.id.main_parent,fragment,tag)
+                .replace(R.id.main_parent, fragment, tag)
                 .commit();
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_net:
                 open(new NetFragment());
+                break;
+
+            case R.id.btn_net2:
+                open(new Net2Fragment());
+                break;
+            case R.id.btn_checkbox_state_update:
+                open(new CheckBoxUpdateFragment());
+                break;
+            case R.id.btn_text_change:
+                open(new DebounceFragment());
+                break;
+
+            case R.id.btn_loop:
+                open(new LoopFragment());
+                break;
+            case R.id.btn_merge:
+                open(new MergeFragment());
+                break;
+            case R.id.btn_not_more_click:
+                open(new NotMoreFragment());
+                break;
+            case R.id.btn_publish:
+                open(new PublishSubjectFragment());
+                break;
+            case R.id.btn_timer:
+                open(new TimerFragment());
+                break;
+            case R.id.btn_zip:
+                open(new ZipFragment());
                 break;
         }
     }
