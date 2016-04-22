@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.mx.R;
+import com.mx.rxBus.RxBusDemoFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -17,7 +18,7 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment  {
+public class MainFragment extends Fragment {
 
 
     @Bind(R.id.btn_net)
@@ -44,6 +45,7 @@ public class MainFragment extends Fragment  {
     Button mBtnPublish;
     @Bind(R.id.btn_rxbus)
     Button mBtnRxbus;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class MainFragment extends Fragment  {
         ButterKnife.bind(this, view);
         return view;
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -116,6 +119,16 @@ public class MainFragment extends Fragment  {
         open(new ZipFragment());
     }
 
+
+    @OnClick(R.id.btn_rxbus)
+    public void test_RxBus() {
+        open(new RxBusDemoFragment());
+    }
+
+    @OnClick(R.id.btn_buffer)
+    public void test_buffer() {
+        open(new BufferFragment());
+    }
 
 
 }

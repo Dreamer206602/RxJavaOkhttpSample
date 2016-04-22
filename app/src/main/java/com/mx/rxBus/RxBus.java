@@ -1,6 +1,6 @@
 package com.mx.rxBus;
 
-import rx.Observer;
+import rx.Observable;
 import rx.subjects.PublishSubject;
 import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
@@ -11,7 +11,7 @@ import rx.subjects.Subject;
  */
 public class RxBus {
 
-    private final PublishSubject<Object>mPublishSubject=PublishSubject.create();//线程不安全
+    //private final PublishSubject<Object>mPublishSubject=PublishSubject.create();//线程不安全
     private final Subject<Object,Object>mSubject=new SerializedSubject<>(PublishSubject.create());//线程安全
 
     public void send(Object o){
@@ -22,7 +22,7 @@ public class RxBus {
      * 获取实际的Bus对象
      * @return
      */
-    public Observer<Object>toObservable(){
+    public Observable<Object> toObservable(){
         return mSubject;
     }
 
