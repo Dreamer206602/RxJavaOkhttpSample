@@ -61,6 +61,7 @@ public class ZipFragment extends RxFragment {
         })
         .subscribeOn(Schedulers.io())
                 //.compose(this.<List<Contacts>>bindToLifecycle())
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<List<Contacts>>() {
                     @Override
