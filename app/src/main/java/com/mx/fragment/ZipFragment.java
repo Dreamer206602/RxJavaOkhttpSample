@@ -3,7 +3,6 @@ package com.mx.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,7 @@ import rx.functions.Func2;
 import rx.schedulers.Schedulers;
 
 /**
- * A simple {@link Fragment} subclass.
+ * RxJav中 zip方法的练习.
  */
 public class ZipFragment extends RxFragment {
 
@@ -45,10 +44,7 @@ public class ZipFragment extends RxFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        
         getContactData();
-        
-   
     }
 
     /**
@@ -64,6 +60,7 @@ public class ZipFragment extends RxFragment {
             }
         })
         .subscribeOn(Schedulers.io())
+                //.compose(this.<List<Contacts>>bindToLifecycle())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<List<Contacts>>() {
                     @Override
@@ -83,7 +80,6 @@ public class ZipFragment extends RxFragment {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
                 ArrayList<Contacts>contactses=new ArrayList<Contacts>();
                 contactses.add(new Contacts("net:Zeus"));
                 contactses.add(new Contacts("net:boobooL"));

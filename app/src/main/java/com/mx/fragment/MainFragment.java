@@ -12,11 +12,12 @@ import com.mx.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment implements View.OnClickListener {
+public class MainFragment extends Fragment  {
 
 
     @Bind(R.id.btn_net)
@@ -43,24 +44,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     Button mBtnPublish;
     @Bind(R.id.btn_rxbus)
     Button mBtnRxbus;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, view);
         return view;
-
-
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mBtnNet.setOnClickListener(this);
-    }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -76,41 +66,57 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 .commit();
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_net:
-                open(new NetFragment());
-                break;
-
-            case R.id.btn_net2:
-                open(new Net2Fragment());
-                break;
-            case R.id.btn_checkbox_state_update:
-                open(new CheckBoxUpdateFragment());
-                break;
-            case R.id.btn_text_change:
-                open(new DebounceFragment());
-                break;
-
-            case R.id.btn_loop:
-                open(new LoopFragment());
-                break;
-            case R.id.btn_merge:
-                open(new MergeFragment());
-                break;
-            case R.id.btn_not_more_click:
-                open(new NotMoreFragment());
-                break;
-            case R.id.btn_publish:
-                open(new PublishSubjectFragment());
-                break;
-            case R.id.btn_timer:
-                open(new TimerFragment());
-                break;
-            case R.id.btn_zip:
-                open(new ZipFragment());
-                break;
-        }
+    @OnClick(R.id.btn_net)
+    public void test_net() {
+        open(new NetFragment());
     }
+
+    @OnClick(R.id.btn_net2)
+    public void test_net2() {
+        open(new Net2Fragment());
+    }
+
+
+
+    @OnClick(R.id.btn_checkbox_state_update)
+    public void test_checkbox_state_Update() {
+        open(new CheckBoxUpdateFragment());
+    }
+
+    @OnClick(R.id.btn_text_change)
+    public void test_TextChange() {
+        open(new DebounceFragment());
+    }
+
+    @OnClick(R.id.btn_loop)
+    public void test_loop() {
+        open(new LoopFragment());
+    }
+
+    @OnClick(R.id.btn_merge)
+    public void test_merge() {
+        open(new MergeFragment());
+    }
+
+    @OnClick(R.id.btn_not_more_click)
+    public void test_not_more() {
+        open(new NotMoreFragment());
+    }
+
+    @OnClick(R.id.btn_publish)
+    public void test_public() {
+        open(new PublishSubjectFragment());
+    }
+
+    @OnClick(R.id.btn_timer)
+    public void test_timer() {
+        open(new TimerFragment());
+    }
+
+    @OnClick(R.id.btn_zip)
+    public void test_zip() {
+        open(new ZipFragment());
+    }
+
+
 }
