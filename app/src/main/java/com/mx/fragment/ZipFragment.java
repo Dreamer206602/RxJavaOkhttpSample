@@ -68,6 +68,11 @@ public class ZipFragment extends RxFragment {
                     public void call(List<Contacts> contactses) {
                         initPage(contactses);
                     }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+
+                    }
                 });
     }
 

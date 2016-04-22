@@ -76,8 +76,6 @@ public class MainFragment extends Fragment  {
         open(new Net2Fragment());
     }
 
-
-
     @OnClick(R.id.btn_checkbox_state_update)
     public void test_checkbox_state_Update() {
         open(new CheckBoxUpdateFragment());
@@ -104,7 +102,7 @@ public class MainFragment extends Fragment  {
     }
 
     @OnClick(R.id.btn_publish)
-    public void test_public() {
+    public void test_publish() {
         open(new PublishSubjectFragment());
     }
 
@@ -117,6 +115,7 @@ public class MainFragment extends Fragment  {
     public void test_zip() {
         open(new ZipFragment());
     }
+
 
 
 }
