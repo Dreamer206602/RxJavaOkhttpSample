@@ -130,5 +130,14 @@ public class MainFragment extends Fragment {
         open(new BufferFragment());
     }
 
+    @OnClick(R.id.btn_check_login)
+    public void test_check_login() {
+        open(new CheckLLoginFragment());
+    }
+ @OnClick(R.id.btn_merge2)
+    public void test_merge2() {
+        open(new Merge2Fragment());
+    }
+
 
 }

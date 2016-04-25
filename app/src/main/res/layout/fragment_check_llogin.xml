@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:orientation="vertical"
+             tools:context="com.mx.fragment.CheckLLoginFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_name"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:weightSum="1">
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/tv_name"
+            android:id="@+id/textView"
+           />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_name"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_weight="0.46"/>
+    </LinearLayout>
+
+     <LinearLayout
+        android:id="@+id/linear_password"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:weightSum="1">
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/tv_password"
+           />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_password"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_weight="0.46"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/tv_email"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_weight="0.46"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_margin="10dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/btn_login"
+        style="@style/style_btn"
+        android:background="@color/not_login"
+        android:text="@string/login" />
+
+
+
+
+</LinearLayout>
