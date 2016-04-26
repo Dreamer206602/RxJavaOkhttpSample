@@ -134,9 +134,15 @@ public class MainFragment extends Fragment {
     public void test_check_login() {
         open(new CheckLLoginFragment());
     }
- @OnClick(R.id.btn_merge2)
+
+    @OnClick(R.id.btn_merge2)
     public void test_merge2() {
         open(new Merge2Fragment());
+    }
+
+    @OnClick(R.id.btn_Scheduler)
+    public void test_scheduler() {
+        open(new SchedulerFragment());
     }
 
 

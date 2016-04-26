@@ -47,6 +47,7 @@
     <string name="tv_email">邮箱:</string>
     <string name="tv_scan">SCAN操作符</string>
     <string name="tv_merge2">MERGE操作符</string>
+    <string name="tv_Scheduler">倒计时按钮</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

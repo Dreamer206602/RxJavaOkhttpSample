@@ -83,6 +83,11 @@
             style="@style/style_btn"
             android:text="@string/tv_merge2"/>
 
+        <Button
+            android:id="@+id/btn_Scheduler"
+            style="@style/style_btn"
+            android:text="@string/tv_Scheduler"/>
+
 
     </LinearLayout>
 </ScrollView>

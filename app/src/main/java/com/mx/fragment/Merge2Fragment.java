@@ -17,7 +17,7 @@ import rx.Observable;
 import rx.Subscriber;
 
 /**
- * A simple {@link Fragment} subclass.
+ * 通过
  */
 public class Merge2Fragment extends Fragment {
 
